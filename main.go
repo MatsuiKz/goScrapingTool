@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	a1 = 123
+	fmt.Println(a1)
 	// 1. ウェブページの取得
 	res, err := http.Get("http://example.com")
 	if err != nil {
