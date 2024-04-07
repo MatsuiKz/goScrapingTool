@@ -8,10 +8,8 @@ import (
 )
 
 func main() {
-	a1 = 123
-	fmt.Println(a1)
 	// 1. ウェブページの取得
-	res, err := http.Get("http://example.com")
+	res, err := http.Get("https://news.yahoo.co.jp/rss/topics/top-picks.xml")
 	if err != nil {
 		panic(err)
 	}
@@ -25,5 +23,7 @@ func main() {
 
 	// 3. 必要な情報の抽出
 	title := doc.Find("title").Text()
+	pubDate := doc.Find("pubDate").Text()
 	fmt.Println(title)
+	fmt.Println(pubDate)
 }
